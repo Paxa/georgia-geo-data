@@ -41,18 +41,18 @@ This dataset is an open extraction from **[Hotyata](https://hotyata.com)** (`geo
 
 ## Completeness & Coverage
 
-- **Total geo objects**: **1720** (`1655` streets, `36` districts, `29` suburbs)
-- **Streets with coordinates**: **1483 / 1655**
-- **Streets with NAPR (`maps.gov.ge`)**: **1163 / 1655**
-- **Streets with OpenStreetMap**: **317 / 1655**
+- **Total geo objects**: **1766** (`1701` streets, `36` districts, `29` suburbs)
+- **Streets with coordinates**: **1551 / 1701**
+- **Streets with NAPR (`maps.gov.ge`)**: **1423 / 1701**
+- **Streets with OpenStreetMap**: **342 / 1701**
 - **Suburbs with coordinates (OSM)**: **29 / 29**
 
 ### Streets by City
 
 | City | Total | With Coords | With NAPR | With OSM |
 |---|---:|---:|---:|---:|
-| `tbilisi` | 1164 | 1094 | 863 | 199 |
-| `batumi` | 470 | 371 | 294 | 117 |
+| `tbilisi` | 1207 | 1159 | 1120 | 222 |
+| `batumi` | 473 | 374 | 297 | 119 |
 | `bakuriani` | 15 | 13 | 4 | 0 |
 | `gudauri` | 6 | 5 | 2 | 1 |
 
@@ -60,7 +60,7 @@ This dataset is an open extraction from **[Hotyata](https://hotyata.com)** (`geo
 
 | Subset | Records | Formats |
 |---|---:|---|
-| `streets` | 1655 | `data/streets.parquet`, `data/streets.jsonl` |
+| `streets` | 1701 | `data/streets.parquet`, `data/streets.jsonl` |
 | `districts` | 36 | `data/districts.parquet`, `data/districts.jsonl`, `data/districts.geojson` |
 | `suburbs` | 29 | `data/suburbs.parquet`, `data/suburbs.jsonl`, `data/suburbs.geojson` |
 
