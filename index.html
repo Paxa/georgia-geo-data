@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Georgia Geo Data — Streets, Suburbs &amp; Districts Viewer</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; height: 100vh; color: #1e293b; }
+    #sidebar { width: 340px; max-width: 100%; border-right: 1px solid #e2e8f0; display: flex; flex-direction: column; background: #fff; z-index: 1000; }
+    #header { padding: 14px 16px; border-bottom: 1px solid #e2e8f0; background: #f8fafc; }
+    #header h1 { margin: 0 0 4px; font-size: 16px; }
+    #header p { margin: 0; font-size: 12px; color: #64748b; }
+    #header a { color: #2563eb; text-decoration: none; }
+    #controls { padding: 10px 16px; border-bottom: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 8px; }
+    #search, #city-select { width: 100%; padding: 7px 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; }
+    .toggles { display: flex; gap: 12px; font-size: 12px; }
+    .toggles label { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+    #stats { padding: 6px 16px; font-size: 12px; color: #64748b; border-bottom: 1px solid #f1f5f9; }
+    #results { flex: 1; overflow-y: auto; }
+    .item { padding: 10px 16px; border-bottom: 1px solid #f1f5f9; cursor: pointer; }
+    .item:hover { background: #f8fafc; }
+    .item-title { font-weight: 600; font-size: 13px; display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+    .badge { font-size: 10px; padding: 2px 6px; border-radius: 999px; font-weight: 500; text-transform: uppercase; }
+    .badge-street { background: #dbeafe; color: #1d4ed8; }
+    .badge-suburb { background: #dcfce7; color: #15803d; }
+    .badge-district { background: #fef3c7; color: #b45309; }
+    .item-sub { font-size: 12px; color: #475569; margin-top: 2px; }
+    .item-aliases { font-size: 11px; color: #94a3b8; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    #map { flex: 1; height: 100%; }
+    @media (max-width: 720px) {
+      body { flex-direction: column; }
+      #sidebar { width: 100%; height: 45vh; border-right: none; border-bottom: 1px solid #e2e8f0; }
+      #map { height: 55vh; }
+    }
+  </style>
+</head>
+<body>
+  <aside id="sidebar">
+    <div id="header">
+      <h1>Georgia Geo Data</h1>
+      <p>Verified streets, suburbs &amp; districts from <a href="https://hotyata.com" target="_blank" rel="noopener">Hotyata</a> (OSM + NAPR + human ads)</p>
+    </div>
+    <div id="controls">
+      <select id="city-select">
+        <option value="all">All cities</option>
+        <option value="batumi">Batumi</option>
+        <option value="tbilisi">Tbilisi</option>
+        <option value="kutaisi">Kutaisi</option>
+        <option value="kobuleti">Kobuleti</option>
+        <option value="bakuriani">Bakuriani</option>
+        <option value="gudauri">Gudauri</option>
+      </select>
+      <input id="search" type="search" placeholder="Search KA / RU / EN / aliases..." />
+      <div class="toggles">
+        <label><input type="checkbox" id="chk-streets" checked /> Streets</label>
+        <label><input type="checkbox" id="chk-suburbs" checked /> Suburbs</label>
+        <label><input type="checkbox" id="chk-districts" checked /> Districts</label>
+      </div>
+    </div>
+    <div id="stats">Loading dataset...</div>
+    <div id="results"></div>
+  </aside>
+  <main id="map"></main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const CITY_CENTERS = {
+      all: [42.0, 43.3, 7],
+      batumi: [41.6434, 41.6399, 13],
+      tbilisi: [41.7151, 44.8271, 12],
+      kutaisi: [42.2679, 42.6946, 13],
+      kobuleti: [41.8214, 41.7792, 13],
+      bakuriani: [41.7497, 43.5264, 13],
+      gudauri: [42.4775, 44.4742, 13],
+    };
+
+    const map = L.map("map").setView([42.0, 43.3], 7);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap contributors | Data: Hotyata &amp; NAPR",
+      maxZoom: 19,
+    }).addTo(map);
+
+    const markersLayer = L.layerGroup().addTo(map);
+    let allItems = [];
+
+    function esc(s) {
+      return String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    }
+
+    function popupHtml(item) {
+      const names = [item.name_ka, item.name_ru, item.name_en].filter(Boolean).join(" / ");
+      const aliases = (item.aliases || []).slice(0, 8).join(", ");
+      return `
+        <div style="min-width:190px;font-size:12px;">
+          <strong>${esc(item.title)}</strong> <span style="color:#64748b">(${esc(item.kind)}, ${esc(item.city)})</span><br/>
+          ${names ? `<div style="margin-top:4px">${esc(names)}</div>` : ""}
+          ${item.district ? `<div style="color:#475569;margin-top:2px">District: ${esc(item.district)}</div>` : ""}
+          ${aliases ? `<div style="color:#64748b;margin-top:4px">Aliases: ${esc(aliases)}</div>` : ""}
+          <div style="color:#94a3b8;margin-top:4px">Source: ${esc(item.source)}</div>
+        </div>
+      `;
+    }
+
+    function render() {
+      const city = document.getElementById("city-select").value;
+      const q = document.getElementById("search").value.trim().toLowerCase();
+      const showStreets = document.getElementById("chk-streets").checked;
+      const showSuburbs = document.getElementById("chk-suburbs").checked;
+      const showDistricts = document.getElementById("chk-districts").checked;
+
+      const filtered = allItems.filter(it => {
+        if (city !== "all" && it.city !== city) return false;
+        if (it.kind === "street" && !showStreets) return false;
+        if (it.kind === "suburb" && !showSuburbs) return false;
+        if (it.kind === "district" && !showDistricts) return false;
+        if (q && !it._haystack.includes(q)) return false;
+        return true;
+      });
+
+      markersLayer.clearLayers();
+      const colors = { street: "#2563eb", suburb: "#16a34a", district: "#d97706" };
+      const markerByIdx = new Map();
+
+      let mapped = 0;
+      filtered.forEach((it, idx) => {
+        if (it.lat != null && it.lng != null) {
+          mapped++;
+          const m = L.circleMarker([it.lat, it.lng], {
+            radius: it.kind === "street" ? 5 : 8,
+            color: colors[it.kind],
+            fillColor: colors[it.kind],
+            fillOpacity: 0.7,
+            weight: 1.5,
+          }).bindPopup(popupHtml(it));
+          m.addTo(markersLayer);
+          markerByIdx.set(idx, m);
+        }
+      });
+
+      document.getElementById("stats").textContent = `Showing ${filtered.length} objects (${mapped} with coordinates)`;
+
+      const resultsEl = document.getElementById("results");
+      const slice = filtered.slice(0, 200);
+      resultsEl.innerHTML = slice.map((it, idx) => `
+        <div class="item" data-idx="${idx}">
+          <div class="item-title">
+            <span>${esc(it.title)}</span>
+            <span class="badge badge-${it.kind}">${esc(it.kind)}</span>
+          </div>
+          <div class="item-sub">${esc(it.city)}${it.name_ka ? " &middot; " + esc(it.name_ka) : ""}${it.name_ru ? " &middot; " + esc(it.name_ru) : ""}</div>
+          ${(it.aliases && it.aliases.length) ? `<div class="item-aliases">${esc(it.aliases.join(", "))}</div>` : ""}
+        </div>
+      `).join("");
+
+      resultsEl.querySelectorAll(".item").forEach(el => {
+        el.addEventListener("click", () => {
+          const idx = Number(el.dataset.idx);
+          const it = filtered[idx];
+          const m = markerByIdx.get(idx);
+          if (it && it.lat != null && it.lng != null) {
+            map.setView([it.lat, it.lng], 15);
+            if (m) m.openPopup();
+          }
+        });
+      });
+    }
+
+    async function loadJsonl(url) {
+      const res = await fetch(url);
+      if (!res.ok) return [];
+      const text = await res.text();
+      return text.split("\n").filter(Boolean).map(line => JSON.parse(line));
+    }
+
+    async function init() {
+      const [streets, suburbs, districts] = await Promise.all([
+        loadJsonl("data/streets.jsonl"),
+        loadJsonl("data/suburbs.jsonl"),
+        loadJsonl("data/districts.jsonl"),
+      ]);
+      const norm = (rows, kind) => rows.map(r => {
+        const title = r.canonical_name || r.name;
+        const hay = [title, r.name_en, r.name_ru, r.name_ka, r.district, ...(r.aliases || [])]
+          .filter(Boolean).join(" ").toLowerCase();
+        return {
+          kind,
+          city: r.city,
+          title,
+          name_en: r.name_en,
+          name_ru: r.name_ru,
+          name_ka: r.name_ka,
+          district: r.district,
+          aliases: r.aliases || [],
+          lat: r.latitude ?? null,
+          lng: r.longitude ?? null,
+          source: r.source || "osm",
+          _haystack: hay,
+        };
+      });
+      allItems = [...norm(districts, "district"), ...norm(suburbs, "suburb"), ...norm(streets, "street")];
+      render();
+    }
+
+    document.getElementById("city-select").addEventListener("change", e => {
+      const [lat, lng, zoom] = CITY_CENTERS[e.target.value] || CITY_CENTERS.all;
+      map.setView([lat, lng], zoom);
+      render();
+    });
+    document.getElementById("search").addEventListener("input", render);
+    ["chk-streets", "chk-suburbs", "chk-districts"].forEach(id =>
+      document.getElementById(id).addEventListener("change", render)
+    );
+
+    init().catch(err => {
+      document.getElementById("stats").textContent = "Failed to load data/*.jsonl (serve via HTTP server or GitHub Pages).";
+      console.error(err);
+    });
+  </script>
+</body>
+</html>

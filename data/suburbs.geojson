@@ -1,0 +1,711 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.774,
+          41.82
+        ]
+      },
+      "properties": {
+        "city": "batumi",
+        "name": "Kobuleti",
+        "name_en": "Kobuleti",
+        "name_ru": "Кобулети",
+        "name_ka": "ქობულეთი",
+        "aliases": [
+          "кобулети",
+          "kobuleti",
+          "ქობულეთი",
+          "ქობულეთში",
+          "ქობულეთ",
+          "kobuletis"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.731,
+          41.724
+        ]
+      },
+      "properties": {
+        "city": "batumi",
+        "name": "Chakvi",
+        "name_en": "Chakvi",
+        "name_ru": "Чакви",
+        "name_ka": "ჩაქვი",
+        "aliases": [
+          "чакви",
+          "chakvi",
+          "ჩაქვი",
+          "ჩაქვში",
+          "чакв"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.691,
+          41.673
+        ]
+      },
+      "properties": {
+        "city": "batumi",
+        "name": "Makhinjauri",
+        "name_en": "Makhinjauri",
+        "name_ru": "Махинджаури",
+        "name_ka": "მახინჯაური",
+        "aliases": [
+          "махинджаури",
+          "makhinjauri",
+          "მახინჯაური",
+          "მახინჯაურში",
+          "მახინჯაურ"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.572,
+          41.568
+        ]
+      },
+      "properties": {
+        "city": "batumi",
+        "name": "Gonio",
+        "name_en": "Gonio",
+        "name_ru": "Гонио",
+        "name_ka": "გონიო",
+        "aliases": [
+          "гонио",
+          "gonio",
+          "გონიო",
+          "გონიოში",
+          "gonio-kvariati",
+          "гонио-квариати",
+          "гонио квариати"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.568,
+          41.545
+        ]
+      },
+      "properties": {
+        "city": "batumi",
+        "name": "Kvariati",
+        "name_en": "Kvariati",
+        "name_ru": "Квариати",
+        "name_ka": "კვარიათი",
+        "aliases": [
+          "квариати",
+          "kvariati",
+          "კვარიათი",
+          "კვარიათში",
+          "კვარიათ"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.552,
+          41.521
+        ]
+      },
+      "properties": {
+        "city": "batumi",
+        "name": "Sarpi",
+        "name_en": "Sarpi",
+        "name_ru": "Сарпи",
+        "name_ka": "სარფი",
+        "aliases": [
+          "сарпи",
+          "sarpi",
+          "სარფი",
+          "სარფში",
+          "სარფ"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.751,
+          41.763
+        ]
+      },
+      "properties": {
+        "city": "batumi",
+        "name": "Tsikhisdziri",
+        "name_en": "Tsikhisdziri",
+        "name_ru": "Цихисдзири",
+        "name_ka": "ციხისძირი",
+        "aliases": [
+          "цихисдзири",
+          "tsikhisdziri",
+          "ციხისძირი",
+          "ციხისძირში",
+          "ციხისძირ"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.705,
+          41.693
+        ]
+      },
+      "properties": {
+        "city": "batumi",
+        "name": "Mtsvane Kontskhi",
+        "name_en": "Mtsvane Kontskhi",
+        "name_ru": "Мцване Концхи",
+        "name_ka": "მწვანე კონცხი",
+        "aliases": [
+          "мцване концхи",
+          "зеленый мыс",
+          "зелёный мыс",
+          "green cape",
+          "მწვანე კონცხი",
+          "მწვანე კონცხ"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.668,
+          41.585
+        ]
+      },
+      "properties": {
+        "city": "batumi",
+        "name": "Khelvachauri",
+        "name_en": "Khelvachauri",
+        "name_ru": "Хелвачаури",
+        "name_ka": "ხელვაჩაური",
+        "aliases": [
+          "хелвачаури",
+          "khelvachauri",
+          "ხელვაჩაური",
+          "ხელვაჩაურ"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.9932,
+          41.5495
+        ]
+      },
+      "properties": {
+        "city": "tbilisi",
+        "name": "Rustavi",
+        "name_en": "Rustavi",
+        "name_ru": "Рустави",
+        "name_ka": "რუსთავი",
+        "aliases": [
+          "рустави",
+          "rustavi",
+          "რუსთავი",
+          "რუსთავში",
+          "რუსთავის"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.7188,
+          41.8458
+        ]
+      },
+      "properties": {
+        "city": "tbilisi",
+        "name": "Mtskheta",
+        "name_en": "Mtskheta",
+        "name_ru": "Мцхета",
+        "name_ka": "მცხეთა",
+        "aliases": [
+          "мцхета",
+          "mtskheta",
+          "მცხეთა",
+          "მცხეთაში",
+          "მცხეთის"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.575,
+          41.7517
+        ]
+      },
+      "properties": {
+        "city": "bakuriani",
+        "name": "Didi Mitarbi",
+        "name_en": "Didi Mitarbi",
+        "name_ru": "Диди Митарби",
+        "name_ka": "დიდი მიტარბი",
+        "aliases": [
+          "didi mitarbi",
+          "mitarbi",
+          "диди митарби",
+          "митарби",
+          "დიდი მიტარბი",
+          "მიტარბი"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.562,
+          41.758
+        ]
+      },
+      "properties": {
+        "city": "bakuriani",
+        "name": "Patara Mitarbi",
+        "name_en": "Patara Mitarbi",
+        "name_ru": "Патара Митарби",
+        "name_ka": "პატარა მიტარბი",
+        "aliases": [
+          "patara mitarbi",
+          "патара митарби",
+          "პატარა მიტარბი"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.4722,
+          41.7374
+        ]
+      },
+      "properties": {
+        "city": "bakuriani",
+        "name": "Bakurianis Andeziti",
+        "name_en": "Bakurianis Andeziti",
+        "name_ru": "Бакурианский Андезит",
+        "name_ka": "ბაკურიანის ანდეზიტი",
+        "aliases": [
+          "andeziti",
+          "bakurianis andeziti",
+          "андезит",
+          "бакурианский андезит",
+          "ანდეზიტი",
+          "ბაკურიანის ანდეზიტი"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.4819,
+          41.7972
+        ]
+      },
+      "properties": {
+        "city": "bakuriani",
+        "name": "Tsaghveri",
+        "name_en": "Tsaghveri",
+        "name_ru": "Цагвери",
+        "name_ka": "წაღვერი",
+        "aliases": [
+          "tsaghveri",
+          "цагвери",
+          "წაღვერი"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.4494,
+          41.8058
+        ]
+      },
+      "properties": {
+        "city": "bakuriani",
+        "name": "Tsemi",
+        "name_en": "Tsemi",
+        "name_ru": "Цеми",
+        "name_ka": "ცემი",
+        "aliases": [
+          "tsemi",
+          "цеми",
+          "ცემი"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.4619,
+          41.7875
+        ]
+      },
+      "properties": {
+        "city": "bakuriani",
+        "name": "Tba",
+        "name_en": "Tba",
+        "name_ru": "Тба",
+        "name_ka": "ტბა",
+        "aliases": [
+          "tba",
+          "тба",
+          "ტბა"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.4706,
+          41.7989
+        ]
+      },
+      "properties": {
+        "city": "bakuriani",
+        "name": "Kechkhobi",
+        "name_en": "Kechkhobi",
+        "name_ru": "Кечхоби",
+        "name_ka": "კეჩხობი",
+        "aliases": [
+          "kechkhobi",
+          "кечхоби",
+          "კეჩხობი"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.4611,
+          41.8114
+        ]
+      },
+      "properties": {
+        "city": "bakuriani",
+        "name": "Sadgeri",
+        "name_en": "Sadgeri",
+        "name_ru": "Садгери",
+        "name_ka": "სადგერი",
+        "aliases": [
+          "sadgeri",
+          "садгери",
+          "სადგერი"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.5042,
+          41.8105
+        ]
+      },
+      "properties": {
+        "city": "bakuriani",
+        "name": "Timotesubani",
+        "name_en": "Timotesubani",
+        "name_ru": "Тимотесубани",
+        "name_ka": "ტიმოთესუბანი",
+        "aliases": [
+          "timotesubani",
+          "тимотесубани",
+          "ტიმოთესუბანი"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.3831,
+          41.8428
+        ]
+      },
+      "properties": {
+        "city": "bakuriani",
+        "name": "Borjomi",
+        "name_en": "Borjomi",
+        "name_ru": "Боржоми",
+        "name_ka": "ბორჯომი",
+        "aliases": [
+          "borjomi",
+          "боржоми",
+          "ბორჯომი",
+          "likani",
+          "ликани",
+          "ლიკანი"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.4765,
+          42.4735
+        ]
+      },
+      "properties": {
+        "city": "gudauri",
+        "name": "Kumlistsikhe",
+        "name_en": "Kumlistsikhe",
+        "name_ru": "Кумлисцихе",
+        "name_ka": "ქუმლისციხე",
+        "aliases": [
+          "kumlistsikhe",
+          "кумлисцихе",
+          "ქუმლისციხე"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.491,
+          42.459
+        ]
+      },
+      "properties": {
+        "city": "gudauri",
+        "name": "Seturni",
+        "name_en": "Seturni",
+        "name_ru": "Сетурни",
+        "name_ka": "სეთურნი",
+        "aliases": [
+          "seturni",
+          "сетурни",
+          "სეთურნი"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.5125,
+          42.5583
+        ]
+      },
+      "properties": {
+        "city": "gudauri",
+        "name": "Kobi",
+        "name_en": "Kobi",
+        "name_ru": "Коби",
+        "name_ka": "კობი",
+        "aliases": [
+          "kobi",
+          "коби",
+          "კობი"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.4956,
+          42.4358
+        ]
+      },
+      "properties": {
+        "city": "gudauri",
+        "name": "Mleta",
+        "name_en": "Mleta",
+        "name_ru": "Млета",
+        "name_ka": "მლეთა",
+        "aliases": [
+          "mleta",
+          "млета",
+          "მლეთა",
+          "ქვემო მლეთა",
+          "ზემო მლეთა"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.6408,
+          42.6583
+        ]
+      },
+      "properties": {
+        "city": "gudauri",
+        "name": "Stepantsminda",
+        "name_en": "Stepantsminda",
+        "name_ru": "Степанцминда / Казбеги",
+        "name_ka": "სტეფანწმინდა / ყაზბეგი",
+        "aliases": [
+          "stepantsminda",
+          "kazbegi",
+          "степанцминда",
+          "казбеги",
+          "სტეფანწმინდა",
+          "ყაზბეგი"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.6014,
+          42.6214
+        ]
+      },
+      "properties": {
+        "city": "gudauri",
+        "name": "Arsha",
+        "name_en": "Arsha",
+        "name_ru": "Арша",
+        "name_ka": "არშა",
+        "aliases": [
+          "arsha",
+          "арша",
+          "არშა"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.5901,
+          42.6107
+        ]
+      },
+      "properties": {
+        "city": "gudauri",
+        "name": "Garbani",
+        "name_en": "Garbani",
+        "name_ru": "Гарбани",
+        "name_ka": "გარბანი",
+        "aliases": [
+          "garbani",
+          "гарбани",
+          "გარბანი"
+        ],
+        "source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.6383,
+          42.6056
+        ]
+      },
+      "properties": {
+        "city": "gudauri",
+        "name": "Sno",
+        "name_en": "Sno",
+        "name_ru": "Сно",
+        "name_ka": "სნო",
+        "aliases": [
+          "sno",
+          "сно",
+          "სნო"
+        ],
+        "source": "osm"
+      }
+    }
+  ]
+}
