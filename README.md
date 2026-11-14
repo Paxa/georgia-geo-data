@@ -32,19 +32,36 @@ Curated multilingual (`ka`, `ru`, `en`) dataset of verified streets, urban distr
 
 This dataset is an open extraction from **[Hotyata](https://hotyata.com)** (`georgia-geo-data` on [GitHub](https://github.com/Paxa/georgia-geo-data)). It combines open geographic registries (**OpenStreetMap** & Georgia's **NAPR** `maps.gov.ge`) with real-world multilingual street names, colloquialisms, and transliteration variants extracted from human-generated real estate listings.
 
-- **Interactive Map Demo**: Open `index.html` (via GitHub Pages or a local static server) to browse streets, suburbs, and districts on an interactive map.
+- **Interactive Map Demo**: Open [the live map viewer](https://paxa.github.io/georgia-geo-data/) (`index.html`) to browse streets, suburbs, and districts.
 
 ## О датасете (RU)
 
 Открытая выгрузка геоданных проекта **[Hotyata](https://hotyata.com)** — верифицированные улицы, районы и пригороды Грузии (`ka`, `ru`, `en` названия, разговорные синонимы и транслитерации из реальных объявлений). Координаты и геометрия основаны исключительно на открытых источниках (**OpenStreetMap** и госреестр **NAPR** `maps.gov.ge`).
 
+## Completeness & Coverage
+
+- **Total geo objects**: **1720** (`1655` streets, `36` districts, `29` suburbs)
+- **Streets with coordinates**: **1460 / 1655**
+- **Streets with NAPR (`maps.gov.ge`)**: **1101 / 1655**
+- **Streets with OpenStreetMap**: **317 / 1655**
+- **Suburbs with coordinates (OSM)**: **29 / 29**
+
+### Streets by City
+
+| City | Total | With Coords | With NAPR | With OSM |
+|---|---:|---:|---:|---:|
+| `tbilisi` | 1164 | 1094 | 863 | 199 |
+| `batumi` | 470 | 348 | 232 | 117 |
+| `bakuriani` | 15 | 13 | 4 | 0 |
+| `gudauri` | 6 | 5 | 2 | 1 |
+
 ## Summary
 
 | Subset | Records | Formats |
 |---|---:|---|
-| `streets` | 1608 | `data/streets.jsonl`, `data/streets.parquet` |
-| `districts` | 36 | `data/districts.jsonl`, `data/districts.geojson`, `data/districts.parquet` |
-| `suburbs` | 29 | `data/suburbs.jsonl`, `data/suburbs.geojson`, `data/suburbs.parquet` |
+| `streets` | 1655 | `data/streets.parquet`, `data/streets.jsonl` |
+| `districts` | 36 | `data/districts.parquet`, `data/districts.jsonl`, `data/districts.geojson` |
+| `suburbs` | 29 | `data/suburbs.parquet`, `data/suburbs.jsonl`, `data/suburbs.geojson` |
 
 ## Attribution & License
 
@@ -56,5 +73,5 @@ This dataset is an open extraction from **[Hotyata](https://hotyata.com)** (`geo
 ```python
 from datasets import load_dataset
 
-streets = load_dataset("json", data_files="data/streets.jsonl", split="train")
+streets = load_dataset("parquet", data_files="data/streets.parquet", split="train")
 ```
