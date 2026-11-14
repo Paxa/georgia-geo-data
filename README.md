@@ -33,6 +33,7 @@ Curated multilingual (`ka`, `ru`, `en`) dataset of verified streets, urban distr
 This dataset is an open extraction from **[Hotyata](https://hotyata.com)** (`georgia-geo-data` on [GitHub](https://github.com/Paxa/georgia-geo-data)). It combines open geographic registries (**OpenStreetMap** & Georgia's **NAPR** `maps.gov.ge`) with real-world multilingual street names, colloquialisms, and transliteration variants extracted from human-generated real estate listings.
 
 - **Interactive Map Demo**: Open [the live map viewer](https://paxa.github.io/georgia-geo-data/) (`index.html`) to browse streets, suburbs, and districts.
+- **Hugging Face Dataset**: [`epasha/georgia-geo-data`](https://huggingface.co/datasets/epasha/georgia-geo-data) (with Dataset Viewer & Parquet configs).
 
 ## О датасете (RU)
 
@@ -73,5 +74,5 @@ This dataset is an open extraction from **[Hotyata](https://hotyata.com)** (`geo
 ```python
 from datasets import load_dataset
 
-streets = load_dataset("parquet", data_files="data/streets.parquet", split="train")
+streets = load_dataset("epasha/georgia-geo-data", "streets", split="train")
 ```
