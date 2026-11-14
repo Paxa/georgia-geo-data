@@ -42,8 +42,8 @@ This dataset is an open extraction from **[Hotyata](https://hotyata.com)** (`geo
 ## Completeness & Coverage
 
 - **Total geo objects**: **1720** (`1655` streets, `36` districts, `29` suburbs)
-- **Streets with coordinates**: **1460 / 1655**
-- **Streets with NAPR (`maps.gov.ge`)**: **1101 / 1655**
+- **Streets with coordinates**: **1483 / 1655**
+- **Streets with NAPR (`maps.gov.ge`)**: **1163 / 1655**
 - **Streets with OpenStreetMap**: **317 / 1655**
 - **Suburbs with coordinates (OSM)**: **29 / 29**
 
@@ -52,7 +52,7 @@ This dataset is an open extraction from **[Hotyata](https://hotyata.com)** (`geo
 | City | Total | With Coords | With NAPR | With OSM |
 |---|---:|---:|---:|---:|
 | `tbilisi` | 1164 | 1094 | 863 | 199 |
-| `batumi` | 470 | 348 | 232 | 117 |
+| `batumi` | 470 | 371 | 294 | 117 |
 | `bakuriani` | 15 | 13 | 4 | 0 |
 | `gudauri` | 6 | 5 | 2 | 1 |
 
