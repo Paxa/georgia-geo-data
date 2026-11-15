@@ -41,20 +41,20 @@ This dataset is an open extraction from **[Hotyata](https://hotyata.com)** (`geo
 
 ## Completeness & Coverage
 
-- **Total geo objects**: **2129** (`2064` streets, `36` districts, `29` suburbs)
-- **Verified & published**: **2064 / 2095 (98.5%)** of observed catalog streets (remaining 31 unconfirmed ad mentions/outliers are excluded)
-- **Streets with coordinates**: **1896 / 2064**
-- **Streets with district**: **1513 / 2064**
-- **Streets with NAPR (`maps.gov.ge`)**: **1444 / 2064**
-- **Streets with OpenStreetMap**: **684 / 2064**
+- **Total geo objects**: **2105** (`2040` streets, `36` districts, `29` suburbs)
+- **Verified & published**: **2040 / 2071 (98.5%)** of observed catalog streets (remaining 31 unconfirmed ad mentions/outliers are excluded)
+- **Streets with coordinates**: **1923 / 2040**
+- **Streets with district**: **1511 / 2040**
+- **Streets with NAPR (`maps.gov.ge`)**: **1443 / 2040**
+- **Streets with OpenStreetMap**: **685 / 2040**
 - **Suburbs with coordinates (OSM)**: **29 / 29**
 
 ### Streets by City
 
 | City | Verified (Published) | With Coords | With District | With NAPR | With OSM |
 |---|---:|---:|---:|---:|---:|
-| `tbilisi` | 1256 / 1284 (97.8%) | 1190 | 1091 | 1141 | 250 |
-| `batumi` | 787 / 790 (99.6%) | 688 | 401 | 297 | 433 |
+| `tbilisi` | 1256 / 1284 (97.8%) | 1208 | 1091 | 1141 | 250 |
+| `batumi` | 763 / 766 (99.6%) | 697 | 399 | 296 | 434 |
 | `bakuriani` | 15 / 15 (100.0%) | 13 | 15 | 4 | 0 |
 | `gudauri` | 6 / 6 (100.0%) | 5 | 6 | 2 | 1 |
 
@@ -62,7 +62,7 @@ This dataset is an open extraction from **[Hotyata](https://hotyata.com)** (`geo
 
 | Subset | Records | Formats |
 |---|---:|---|
-| `streets` | 2064 | `data/streets.parquet`, `data/streets.jsonl` |
+| `streets` | 2040 | `data/streets.parquet`, `data/streets.jsonl` |
 | `districts` | 36 | `data/districts.parquet`, `data/districts.jsonl`, `data/districts.geojson` |
 | `suburbs` | 29 | `data/suburbs.parquet`, `data/suburbs.jsonl`, `data/suburbs.geojson` |
 
